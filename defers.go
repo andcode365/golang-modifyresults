@@ -31,9 +31,20 @@ func d4() (result int) {
     return 0 
 }
 
+func d5() (result int) {
+    defer func() {
+        result = 1
+    }()
+    defer func() {
+        result = 2
+    }()
+    return 0 
+}
+
 func main() {
     fmt.Println("d1=", d1())
     fmt.Println("d2=", d2())
     fmt.Println("d3=", d3())
     fmt.Println("d4=", d4())
+    fmt.Println("d5=", d5())
 }
